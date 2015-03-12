@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<script type="javascript" src="js/app.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<title>${task.get_title()}</title>
+</head>
+<body>
+<dl>
+    <dt>Title</dt>
+    <dd>${task.get_title()}</dd>
+    
+    <dt>LastUpdate</dt>
+    <dd>${task.get_created()}</dd>
+    
+    <dt>TimeLimit</dt>
+    <dd>${task.get_timelimit()}</dd>
+    
+    <dt>Note</dt>
+    <dd>${task.get_note()}</dd>
+</dl>
+
+<hr />
+<form name="form" method="POST" action="">
+<dl>
+    <dt>Status</dt>
+    <dd>
+    	<select name="status">
+    		<option value="1">進行中</option>
+    		<option value="0">完了</option>
+    	</select>
+    </dd>
+    
+    <dt>Note</dt>
+    <dd><textarea name="note"></textarea></dd>
+</dl>
+<input type="submit"></input>
+<input type="hidden" name="timelimit" value="${task.get_timelimit()}"></input>
+</form>
+
+<p><a href="/">[Back]</a></p>
+
+</body>
+</html>
